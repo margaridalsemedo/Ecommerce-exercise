@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="container" id="head">
+      <span class="open-btn" onclick="openNav()">&#9776;</span>
+      <div class="logg">
+        <img src="images/logo.svg" id="logoo" alt="logo-img" />
+      </div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        ><br />
+        <a class="nav-link" href="#">Collections</a>
+        <a class="nav-link" href="#">Men</a>
+        <a class="nav-link" href="#">Women</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Contact</a>
+      </div>
+      <nav class="nav-max" id="nav-menuu">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#">Collections</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="shop-card-info">
+        <img
+          class="img-card"
+          src="images/icon-cart.svg"
+          alt="img-card"
+          onclick="showShopMenu()"
+        />
+        <img
+          class="img-person"
+          alt="img-person"
+          src="images/image-avatar.png"
+        />
+      </div>
+      <p class="card-num"></p>
+    </header>
+    <div class="cart-info">
+      <h4 class="head-in">Cart</h4>
+      <p class="cartContent">Your cart is empty</p>
+      <div class="info-shopping">
+        <img
+          class="img-shopping"
+          alt="img-shopping"
+          src="images/image-product-1-thumbnail.jpg"
+        />
+        <p class="content-phargh above">
+          Fall Limited Edition Sneakers $125.00 <span id="low">X</span
+          ><span id="item"></span><span id="price-num"></span>
+        </p>
+        <img
+          class="img-delete"
+          src="images/icon-delete.svg"
+          alt="img-delete"
+          onclick="deleteItem()"
+        />
+      </div>
+      <button class="btn-add menu">Checkout</button>
+    </div>
+    <section class="main-slider containerr" role="main">
+      <div class="slider">
+        <img
+          class="mySlides"
+          alt="slide-img"
+          src="images/image-product-1.jpg"
+        />
+        <img
+          class="mySlides"
+          alt="slide-img"
+          src="images/image-product-2.jpg"
+        />
+        <img
+          class="mySlides"
+          alt="slide-img"
+          src="images/image-product-3.jpg"
+        />
+        <img
+          class="mySlides"
+          alt="slide-img"
+          src="images/image-product-4.jpg"
+        />
+        <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="next" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+
+      <div class="slide-above">
+        <button class="btn-hide" onclick="hideAbove()">&times;</button>
+        <div class="slidder">
+          <img
+            class="slide-desk"
+            alt="img-desk"
+            src="images/image-product-1.jpg"
+          />
+          <img
+            class="slide-desk"
+            alt="img-desk"
+            src="images/image-product-2.jpg"
+          />
+          <img
+            class="slide-desk"
+            alt="img-desk"
+            src="images/image-product-3.jpg"
+          />
+          <img
+            class="slide-desk"
+            alt="img-desk"
+            src="images/image-product-4.jpg"
+          />
+          <button class="prev" onclick="plusDivsDesk(-1)">&#10094;</button>
+          <button class="next" onclick="plusDivsDesk(1)">&#10095;</button>
+        </div>
+        <div class="product-small">
+          <div class="img-slide" onclick="showBorder(this)" id="first-img">
+            <img
+              class="product-sm"
+              id="default-imgg"
+              src="images/image-product-1-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpicDesk(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+          <div class="img-slide" onclick="showBorder(this)">
+            <img
+              class="product-sm"
+              src="images/image-product-2-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpicDesk(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+          <div class="img-slide" onclick="showBorder(this)">
+            <img
+              class="product-sm"
+              src="images/image-product-3-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpicDesk(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+          <div class="img-slide" onclick="showBorder(this)">
+            <img
+              class="product-sm"
+              src="images/image-product-4-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpicDesk(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="img-product">
+        <img
+          id="product-imgg"
+          src="images/image-product-1.jpg"
+          alt="product-img"
+          onclick="aboveLayer()"
+        />
+        <div class="product-small">
+          <div class="img-slide" onclick="showBorder(this)" id="first-img-2">
+            <img
+              id="default-imgg-2"
+              class="product-sm"
+              src="images/image-product-1-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpic(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+          <div class="img-slide" onclick="showBorder(this)">
+            <img
+              class="product-sm"
+              src="images/image-product-2-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpic(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+          <div class="img-slide" onclick="showBorder(this)">
+            <img
+              class="product-sm"
+              src="images/image-product-3-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpic(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+          <div class="img-slide" onclick="showBorder(this)">
+            <img
+              class="product-sm"
+              src="images/image-product-4-thumbnail.jpg"
+              alt="prod-imgg"
+              onclick="showpic(this)"
+              onmouseover="bigImg(this)"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="content-card">
+        <h3>Sneaker Company</h3>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p class="content-phargh">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price-container">
+          <div class="price-content">
+            <h2>$125.00</h2>
+            <p class="discount">50%</p>
+          </div>
+          <p class="price-before">$250.00</p>
+        </div>
+        <div class="control-container">
+          <div class="price-content control">
+            <button class="mins" onclick="minsFun()">-</button>
+            <span class="number" id="myNum">0</span>
+            <button class="plus" onclick="plusFun()">+</button>
+          </div>
+          <button class="btn-add" onclick="addToCart()">
+            <img class="img-card" alt="img-card" src="images/white-cart.svg" />
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </section>
+    <div id="overlay"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
